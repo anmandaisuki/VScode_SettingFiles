@@ -1,34 +1,40 @@
 {
     "version": "2.0.0",
     "tasks": [
+        // {
+        //     "label": "debug build",
+        //     "type": "shell",
+        //     "command": "g++ -O0 -g *.cpp -o debug" , // -O0 Optimization is off for debugging
+        //     "detail" : ""
+        // },
+        // {
+        //     "label": "make directory",
+        //     "type": "shell",
+        //     "command": "mkdir debug"
+        // },
+        // {
+        //     "label": "move file",
+        //     "type": "shell",
+        //     "command": "mv debug.exe debug"
+        // },
+        // {
+        //     "label": "Debug Preparation",
+        //     "type": "shell",
+        //     "command": "echo",
+        //     "args":["Debug Build is done"],
+        //     "dependsOrder": "sequence",
+        //     "dependsOn": [
+        //         "debug build",
+        //         "make directory",
+        //         "move file"
+        //     ],
+        //     "detail" : "Generate debug.exe and store to debug folder."
+        // },
         {
-            "label": "debug build",
-            "type": "shell",
-            "command": "g++ -O0 -g *.cpp -o debug" , // -O0 Optimization is off for debugging
-            "detail" : ""
-        },
-        {
-            "label": "make directory",
-            "type": "shell",
-            "command": "mkdir debug"
-        },
-        {
-            "label": "move file",
-            "type": "shell",
-            "command": "mv debug.exe debug"
-        },
-        {
-            "label": "Debug Preparation",
-            "type": "shell",
-            "command": "echo",
-            "args":["Debug Build is done"],
-            "dependsOrder": "sequence",
-            "dependsOn": [
-                "debug build",
-                "make directory",
-                "move file"
-            ],
-            "detail" : "Generate debug.exe and store to debug folder."
+            "label": "Task : Debug Build for cpp.",
+            "type" : "shell",
+            "command": "powershell -ExecutionPolicy Bypass .vscode/createDebugExe.ps1",
+            "detail" : "Generate debug/debug.exe"
         }
     ]
 }
